@@ -1,0 +1,128 @@
+body {
+    background-color: #ccc;
+    color: black;
+    margin: 0px auto;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+header nav {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+}
+
+.nav-header-main ul {
+    float: left;
+}
+
+.nav-header-main ul li {
+ float: left;
+ list-style: none;
+}
+
+.nav-header-main ul li a {
+ float: left;
+ font-family: arial, sans-serif;
+ font-size: 16px;
+ color: #000;
+ margin-left: 20px;
+}
+
+header .header-login {
+    float: right;
+}
+
+header .header-login form {
+    float: left;
+    padding-top: 15px;
+}
+
+header .header-login form input {
+    float: left;
+    width: 140px;
+    height: 30px;
+    padding: 0px 10px;
+    margin-right: 10px;
+    border: none;
+    font-family: arial, sans-serif;
+   font-size: 16px;
+   color: #111;
+    background-color: #f3f3f3;
+    line-height: 30px; 
+}
+
+header .header-login form button {
+    float: right;
+    width: 60px;
+    height: 30px;
+    padding: 0px 10px;
+    margin-right: 10px;
+    border: none;
+    font-family: arial, sans-serif;
+   font-size: 16px;
+   color: #111;
+    background-color: #f3f3f3;
+   cursor: pointer;
+}
+header .header-login form button:hover {
+    background-color: #ccc;
+}
+
+header .header-login a {
+    width: 60px;
+    height: 60px;
+ float: left;
+ font-family: arial, sans-serif;
+ font-size: 16px;
+ color: #000;
+line-height: 60px;
+ border: none;
+}
+
+header .header-login a:hover{
+    color: #ccc;
+}
+
+/*styling signup page*/
+
+.main-wrapper {
+    margin: 0 auto;
+    width: 300px ;
+    padding-top: 30px;
+}
+.main-wrapper a {
+    text-decoration: none; 
+}
+.main-wrapper h1 {
+    margin-left: 100px;
+}
+
+.main-wrapper form input {
+    width: 100%;
+    height: 20px;
+    margin: 10px;
+    border: none;
+    padding-left: 4px;
+}
+
+/*.main-wrapper form ::placeholder{
+    color: blue;
+}
+*/
+.main-wrapper form button {
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 120px;
+    background-color: #ccc;
+    border: none;
+     cursor: pointer;
+    font-size: 14px;
+}
+
+.main-wrapper form button:hover {
+    background-color: #808080;
+   
+}
