@@ -1,3 +1,41 @@
+<?php
+  session_start();
+//Database Configuration File
+require_once ('header.php');
+require_once ('dbh.inc.php');
+
+error_reporting(0);
+
+  if(isset($_POST['login-submit']))
+  {
+     // Getting username/ email and password
+    $email=$_POST['email'];
+    $password=md5($_POST['password']);
+    $errors = array();
+
+ 
+    if (empty($email) || empty($password)){
+      array_push($errors) = "email or password fiel can not be empty";
+
+    }
+   
+    // Fetch data from database on the basis of username/email and password
+    $sql ="SELECT * FROM users WHERE (username=:username || email=:email) and (password=:password)";
+    $query= $dbh -> prepare($sql);
+    $query-> bindParam(':username', $username, PDO::PARAM_STR);
+    $query-> bindParam(':password', $password, PDO::PARAM_STR);
+    $query-> execute();
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+  if($query->rowCount() > 0)
+  {
+    $_SESSION['email']=$_POST['username'];
+    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+  } else{
+    echo "<script>alert('Invalid Details');</script>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +59,21 @@
 				</ul>
 		
 			<div class="header-login">
-			<form action="includes/login.php" method="POST">
-			<input type="text" name="emailid" placeholder="email address">
-			<input type="password" name="pwd" placeholder="enter password">
+              <?php  /* 
+                
+                if (isset($errors)): ?>
+                    
+                <ul>
+            <?php foreach($errors as $error): ?>
+            <li style="color: red; list-style: none;"><?= $error; ?></li>
+            <?php endforeach; ?>
+        </ul>
+
+        <?php endif; ?>*/
+                ?>
+			<form action="" method="POST">
+			<input type="email" name="email" placeholder="email address">
+			<input type="password" name="password" placeholder="enter password">
 			<button type="submit" name="login-submit">Login</button>
 			</form>
 
